@@ -21,6 +21,11 @@ import { formatAmount, IsMobileWidth, IsTabletWidth } from "./utils";
 import UpcomingPhones from "./upcomingPhones";
 import moment from "moment";
 
+import PlaceholderImage from "../placeholder-image.jpg";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+
 import Spinner from 'react-bootstrap/Spinner';
 import { Helmet } from "react-helmet";
 import { Adsense } from "@ctrl/react-adsense";
@@ -40,22 +45,38 @@ const ProductPages = () => {
   const [currentUser, setCurrentUser] = useState([]);
   const tabletWidth = IsTabletWidth();
   const mobileWidth = IsMobileWidth();
+  // const [state, setState] = useState({
+  //   group1: [],
+  //   group2: [],
+  //   group3: [],
+  //   group4: [],
+  //   group5: [],
+  //   group6: [],
+  //   group7: [],
+  //   group8: [],
+  //   group9: [],
+  //   group10: [],
+  //   storage: "ONE",
+  //   comment: "",
+  //   commentReply: "",
+  //   selectedIndex: false,
+  // });
+
+
+
+
+
+
   const [state, setState] = useState({
-    group1: [],
-    group2: [],
-    group3: [],
-    group4: [],
-    group5: [],
-    group6: [],
-    group7: [],
-    group8: [],
-    group9: [],
-    group10: [],
+    groups: [],
     storage: "ONE",
     comment: "",
     commentReply: "",
     selectedIndex: false,
   });
+  
+
+
   const { slug } = useParams();
   var settings = {
     dots: true,
@@ -93,128 +114,156 @@ const ProductPages = () => {
     console.log(state);
   }, [state]);
 
+
   useEffect(() => {
     if (singleProducts?.data?.single_product?.attribute_values) {
-      let group1 = [];
-      let group2 = [];
-      let group3 = [];
-      let group4 = [];
-      let group5 = [];
-      let group6 = [];
-      let group7 = [];
-      let group8 = [];
-      let group9 = [];
-      let group10 = [];
-
-      singleProducts?.data?.single_product?.attribute_values.map((data) => {
-        if (
-          data?.group_id == 1 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group1.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 2 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group2.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 3 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group3.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 4 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group4.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 5 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group5.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 6 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group6.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 7 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group7.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 8 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group8.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 9 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group9.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
-          });
-        } else if (
-          data?.group_id == 10 &&
-          data?.attribute_value &&
-          data?.attribute_value !== ""
-        ) {
-          group10.push({
-            name: data?.group_values?.value,
-            value: data?.attribute_value,
+      const groups = Array.from({ length: 10 }, () => []);
+  
+      singleProducts.data.single_product.attribute_values.forEach((data) => {
+        const { group_id, attribute_value, group_values } = data;
+  
+        if (group_id >= 1 && group_id <= 10 && attribute_value && attribute_value !== "") {
+          const groupIndex = group_id - 1;
+  
+          groups[groupIndex].push({
+            name: group_values.value,
+            value: attribute_value,
           });
         }
       });
-
-      setState({
-        ...state,
-        group1,
-        group2,
-        group3,
-        group4,
-        group5,
-        group6,
-        group7,
-        group8,
-        group9,
-        group10,
-      });
+  
+      setState((prevState) => ({
+        ...prevState,
+        groups,
+      }));
     }
   }, [singleProducts?.data?.single_product?.attribute_values]);
+  
+
+
+
+  // useEffect(() => {
+  //   if (singleProducts?.data?.single_product?.attribute_values) {
+  //     let group1 = [];
+  //     let group2 = [];
+  //     let group3 = [];
+  //     let group4 = [];
+  //     let group5 = [];
+  //     let group6 = [];
+  //     let group7 = [];
+  //     let group8 = [];
+  //     let group9 = [];
+  //     let group10 = [];
+
+  //     singleProducts?.data?.single_product?.attribute_values.map((data) => {
+  //       if (
+  //         data?.group_id == 1 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group1.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 2 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group2.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 3 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group3.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 4 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group4.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 5 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group5.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 6 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group6.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 7 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group7.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 8 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group8.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 9 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group9.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       } else if (
+  //         data?.group_id == 10 &&
+  //         data?.attribute_value &&
+  //         data?.attribute_value !== ""
+  //       ) {
+  //         group10.push({
+  //           name: data?.group_values?.value,
+  //           value: data?.attribute_value,
+  //         });
+  //       }
+  //     });
+
+  //     setState({
+  //       ...state,
+  //       group1,
+  //       group2,
+  //       group3,
+  //       group4,
+  //       group5,
+  //       group6,
+  //       group7,
+  //       group8,
+  //       group9,
+  //       group10,
+  //     });
+  //   }
+  // }, [singleProducts?.data?.single_product?.attribute_values]);
 
   const specRef = useRef(null);
   const opinRef = useRef(null);
@@ -362,7 +411,7 @@ const ProductPages = () => {
           <Header hadleSarchBarOpen={() => setIsSearchBarOpen(true)}
             isSearchBarOpen={isSearchBarOpen} />
 
-          {singleProducts?.loading ? (
+          {!singleProducts ? (
             <div
 
               className="d-flex justify-content-center align-items-center height-80vh"
@@ -805,13 +854,12 @@ const ProductPages = () => {
                   </div>
                 </div>
               </section>
-
               <section ref={specRef} id="specification-sec">
                 <div className="container">
                   <div className="row">
                     <div className="col-md-9 spec-col-for-p">
                       <div className="main-tit">Specifications</div>
-                      {state.group1.length > 0 && (
+                      {state.groups[0]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -823,9 +871,10 @@ const ProductPages = () => {
                             <span className="icon_heading_title">General</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group1.map((data, index) => (
+                            {state.groups[0]?.map((data, index) => (
                               <>
                                 <tr key={index}>
+                                  {console.log("Data",data.name)}
                                   <td>{data?.name}</td>
                                   <td>{data?.value}</td>
                                 </tr>
@@ -835,7 +884,7 @@ const ProductPages = () => {
                         </>
                       )}
 
-                      {state.group2.length > 0 && (
+                      {state.groups[1]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -846,7 +895,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Display</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group2.map((data, index) => (
+                            {state.groups[1]?.map((data, index) => (
                               <>
                                 <tr key={index}>
                                   <td>{data?.name}</td>
@@ -877,7 +926,7 @@ const ProductPages = () => {
                         </div>
                       </section>
 
-                      {state.group3.length > 0 && (
+                      {state.groups[2]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -888,7 +937,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Build</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group3.map((data, index) => (
+                            {state.groups[2]?.map((data, index) => (
                               <>
                                 <tr key={index}>
                                   <td>{data?.name}</td>
@@ -920,7 +969,7 @@ const ProductPages = () => {
                           </div>
                         </div>
                       </section>
-                      {state.group4.length > 0 && (
+                      {state.groups[3]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -931,7 +980,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Network</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group4.map((data, index) => (
+                            {state.groups[3]?.map((data, index) => (
                               <>
                                 <tr key={index}>
                                   <td>{data?.name}</td>
@@ -963,7 +1012,7 @@ const ProductPages = () => {
                         </div>
                       </section>
 
-                      {state.group5.length > 0 && (
+                      {state.groups[4]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -974,7 +1023,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Memory</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group5.map((data, index) => (
+                            {state.groups[4]?.map((data, index) => (
                               <>
                                 <tr key={index}>
                                   <td>{data?.name}</td>
@@ -985,7 +1034,7 @@ const ProductPages = () => {
                           </table>
                         </>
                       )}
-                      {state.group6.length > 0 && (
+                      {state.groups[5]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -996,7 +1045,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Camera</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group6.map((data) => (
+                            {state.groups[5]?.map((data) => (
                               <>
                                 <tr>
                                   <td>{data?.name}</td>
@@ -1027,7 +1076,7 @@ const ProductPages = () => {
                           </div>
                         </div>
                       </section>
-                      {state.group7.length > 0 && (
+                      {state.groups[6]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -1038,7 +1087,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Connectivity</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group7.map((data) => (
+                            {state.groups[6]?.map((data) => (
                               <>
                                 <tr>
                                   <td>{data?.name}</td>
@@ -1071,7 +1120,7 @@ const ProductPages = () => {
                           </div>
                         </div>
                       </section>
-                      {state.group8.length > 0 && (
+                      {state.groups[7]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -1082,7 +1131,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Features</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group8.map((data) => (
+                            {state.groups[7]?.map((data) => (
                               <>
                                 <tr>
                                   <td>{data?.name}</td>
@@ -1093,7 +1142,7 @@ const ProductPages = () => {
                           </table>
                         </>
                       )}
-                      {state.group9.length > 0 && (
+                      {state.groups[8]?.length > 0 && (
                         <>
                           <div className="icon_heading_sepecification">
                             <img
@@ -1104,7 +1153,7 @@ const ProductPages = () => {
                             <span className="icon_heading_title">Battery</span>
                           </div>
                           <table className="table specification_table">
-                            {state.group9.map((data) => (
+                            {state.groups[8]?.map((data) => (
                               <>
                                 <tr>
                                   <td>{data?.name}</td>
@@ -1135,14 +1184,14 @@ const ProductPages = () => {
                           </div>
                         </div>
                       </section>
-                      {state.group10.length > 0 && (
+                      {state.groups[9]?.length > 0 && (
                         <div className="internationalprice">
                           <h3 className="main-tit">
                             International Price List of{" "}
                             {singleProducts?.data?.single_product?.name}
                           </h3>
                           <table className="table specification_table">
-                            {state.group10.map((data) => (
+                            {state.groups[9]?.map((data) => (
                               <>
                                 <tr>
                                   <td>{data?.name}</td>
