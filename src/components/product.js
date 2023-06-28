@@ -22,8 +22,6 @@ import UpcomingPhones from "./upcomingPhones";
 import moment from "moment";
 
 import PlaceholderImage from "../placeholder-image.jpg";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 import Spinner from 'react-bootstrap/Spinner';
