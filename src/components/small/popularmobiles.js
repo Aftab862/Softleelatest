@@ -37,6 +37,8 @@ const PopularMobiles = (props) => {
 
   let localSelectedCurrency = localStorage.getItem("selectedCurrency");
 
+
+
   const getItemPrice = (price) => {
     let selectedCurrency =
       currency.data &&
@@ -64,6 +66,18 @@ const PopularMobiles = (props) => {
           name="description"
           content="Mobile Prices in Pakistan 2023 and Find New & Latest mobile Market Rates in ... Mobile brands like Samsung, Apple, Vivo, Tecno, Oppo, Infinix, and other top ..."
         />
+
+        <meta
+          name="keywords"
+          content={
+            [
+              "Best Mobiles",
+              "Trending Mobiles",
+              "Best Android Phone"
+            ]
+          } />
+
+
       </Helmet>
       {isSearchBarOpen && mobileWidth ? (
         <>

@@ -38,6 +38,7 @@ const UpcomingPage = (props) => {
   let localSelectedCurrency = localStorage.getItem("selectedCurrency");
 
 
+
   const getItemPrice = (price) => {
     let selectedCurrency =
       currency.data &&
@@ -63,6 +64,18 @@ const UpcomingPage = (props) => {
           name="description"
           content="Latest Softliee Upcoming Mobile Phones in 2023 · Samsung, Nokia, Oppo, Apple, Infinix, realme and much more"
         />
+        <meta
+          name="keywords"
+          content={
+            [
+              "Upcoming Mobiles",
+              "mobile phones 2023",
+              "New Mobiles in Pakistan",
+              "Upcoming Mobile Prices",
+              "Upcoming Mobiles Samsung"
+            ]
+          } />
+
       </Helmet>
 
       {isSearchBarOpen && mobileWidth ? (

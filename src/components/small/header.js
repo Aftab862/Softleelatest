@@ -151,6 +151,12 @@ const Header = (props) => {
     })
   }, [softlieeUser])
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   useEffect(() => {
 
   }, [Brand])
@@ -567,6 +573,7 @@ const Header = (props) => {
                         <input
                           onFocus={() => setIsSearchDialogOpen(true)}
                           onChange={(e) => handleSearchChange(e.target.value)}
+                          onKeyPress={handleKeyPress}
                           value={search}
                           type="text"
                           className="search"
@@ -582,7 +589,6 @@ const Header = (props) => {
                           height="38"
                         />
                       </div>
-
                       {isSearchDialogOpen && (
                         <SearchDialog
                           open={isSearchDialogOpen}

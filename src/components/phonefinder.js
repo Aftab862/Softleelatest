@@ -47,23 +47,28 @@ const PhoneFinder = () => {
     });
   };
 
-  useEffect(() => {
-    if (!filters?.data) {
-      dispatch(getFilters());
-    }
-    if (!brands?.data) {
-      dispatch(getBrands());
-    }
-    return () => {
-      dispatch(
-        resetFilterMobiles({
-          loading: false,
-          error: false,
-          data: false,
-        })
-      );
-    };
-  }, []);
+
+
+
+  const keywords =
+
+    useEffect(() => {
+      if (!filters?.data) {
+        dispatch(getFilters());
+      }
+      if (!brands?.data) {
+        dispatch(getBrands());
+      }
+      return () => {
+        dispatch(
+          resetFilterMobiles({
+            loading: false,
+            error: false,
+            data: false,
+          })
+        );
+      };
+    }, []);
 
   const brandList =
     brands &&
@@ -158,6 +163,23 @@ const PhoneFinder = () => {
               name="description"
               content="Phone Finder - Finder Mobile phones Prices, Brand, Display, Cpu, Storage, Camera, Bbattey, Rating and more."
             />
+
+            <meta
+              name="keywords"
+              content={
+                [
+                  "phone finder",
+                  "search result",
+                  "mobile finder",
+                  "mobile searcher",
+                  "mobile price",
+                  "find mobile in Pakistan",
+                  "search mobile by ram and storage",
+                  "search mobile by price",
+                  "Softliee mobile finder"
+                ]} />
+
+
           </Helmet>
           <section className="ads-section margin-top-30px">
             <div className="container">

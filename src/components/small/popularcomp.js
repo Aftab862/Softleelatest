@@ -37,7 +37,7 @@ const Popularcomp = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-7">
-            <h2 className="main-tit">Popular Comparison</h2>
+            <h3 className="main-tit">Popular Comparison</h3>
           </div>
           <div className="col-sm-6 col-5">
             <div className="flex align-items-end justify-content-end">

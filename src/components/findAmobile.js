@@ -325,24 +325,39 @@ const FindAMobile = (props) => {
         <>
           <Helmet>
             <title>
-              {productByBrand?.data?.brands?.meta_title
+              Softliee Phone Finder- Explore the largest mobile database
+              {/* {productByBrand?.data?.brands?.meta_title
                 ? productByBrand?.data?.brands?.meta_title
-                : "Sofliee"}
+                : "Sofliee"} */}
             </title>
             <meta
               name="description"
               content={
-                productByBrand?.data?.brands?.meta_description
-                  ? productByBrand?.data?.brands?.meta_description
-                  : ""
+                "Explore a wide range of mobile phone options based on price, RAM, specs and more. Softliee Phone Finder covers top trending mobile companies. Mobile price in Pakistan"
+                // productByBrand?.data?.brands?.meta_description
+
+                //   ? productByBrand?.data?.brands?.meta_description
+                //   : ""
               }
             />
             <meta
               name="keywords"
               content={
-                productByBrand?.data?.brands?.meta_keywords
-                  ? productByBrand?.data?.brands?.meta_keywords
-                  : ""
+                [
+                  "phone finder",
+                  "search result",
+                  "mobile finder",
+                  "mobile searcher",
+                  "mobile price",
+                  "find mobile in Pakistan",
+                  "search mobile by ram and storage",
+                  "search mobile by price",
+                  "Softliee mobile finder"
+                ]
+
+                // productByBrand?.data?.brands?.meta_keywords
+                //   ? productByBrand?.data?.brands?.meta_keywords
+                //   : ""
               }
             />
           </Helmet>

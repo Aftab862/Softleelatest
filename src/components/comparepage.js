@@ -28,6 +28,7 @@ import { Adsense } from "@ctrl/react-adsense";
 
 const PageCompare = () => {
 
+
   const [myFlag, setMyflag] = useState(false)
   let navigate = useNavigate();
   const mobileWidth = IsMobileWidth();
@@ -408,7 +409,26 @@ const PageCompare = () => {
         <meta
           name="description"
           content="Compare Mobiles Phones-Compare phones Prices, Specification, Display,Cpu, Storage, Camera, Battery, Rating and more"
-        />
+        />  <meta
+          name="keywords"
+          content={
+            [
+              "Compare mobile",
+              "Compare mobile charts",
+              "Mobile comparison",
+              "Compare mobile side by side",
+              "Compare mobile specs",
+              "compare-mobile-phone samsung-galaxy-s24-fe with samsung galaxy z fold 5 ",
+              "Compare mobile phone vivo v 25 with iphone 13",
+              "Compare phone iphone 14 pro max with oppo a 1k"
+
+            ]
+          } />
+
+
+
+
+
       </Helmet>
       {compareTwoProducts?.loading ? (
         <div

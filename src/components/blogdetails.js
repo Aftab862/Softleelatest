@@ -961,6 +961,7 @@ const Blogdetails = () => {
                                     className="single-mob-img"
                                     src={`https://softliee.com/softlee/public/storage/product/${item.image}`}
                                     alt={item.name}
+                                  
                                   // onClick={() => handleImgClick(item.slug)}
                                   />
                                   <h3 className={clsx(

@@ -53,6 +53,8 @@ const Ourblog = () => {
 
 
 
+
+
   const ChangeCurrentItems = () => {
     if (blogs) {
       if (blogs.data) {
@@ -82,6 +84,21 @@ const Ourblog = () => {
           name="description"
           content="Mobile Blog aims to focus upon latest news and seo friendly content related to technology, gadgets or Mobile phones."
         />
+
+        <meta
+          name="keywords"
+          content={[
+            "Mobile News",
+            "Tech News",
+            "Mobiles features",
+            "Mobile reviews",
+            "Tech blog",
+            "Mobile Prices"
+          ]} />
+
+
+
+
       </Helmet>
 
       {/* <Items currentItems={currentItems} /> */}
@@ -96,6 +113,13 @@ const Ourblog = () => {
             hadleSarchBarOpen={() => setIsSearchBarOpen(true)}
             isSearchBarOpen={isSearchBarOpen}
           />
+
+
+          {/* <Feed
+            url="https://softliee.com/softlee/public/api/get_blogs"
+            count={5} // specify the number of items you want to display
+          /> */}
+
           <section className="ads-section margin-top-50px margin-bottom-30px">
             <div className="container">
               <div className="row justify-content-center">
@@ -139,54 +163,61 @@ const Ourblog = () => {
                   <div className="row">
                     {myCurrentItems &&
                       myCurrentItems.map((data, index) => {
-                        return (<>
-                          <div className="col-sm-6">
-                            <div className="single-post-item-wrap">
-                              <div className="for-flexing-single-post">
-                                <img
-                                  className="posts-img"
-                                  src={`https://softliee.com/softlee/public/storage/blogs/${data?.image}`}
-                                  alt=""
-                                />
-                                <div className="right-side-info">
-                                  {
-                                    mobileWidth ? <h3 className="posts-title-m">{data?.title.substring(0, 45) + "..."}</h3> :
-                                      <h3 className="posts-title-m">{data?.title}</h3>
-                                  }
+                        return (
+                          <amp-list
+                          // key={data.id}
+                          // layout="responsive"
+                          // src={`https://softliee.com/amp-api/${data.id}`}
 
-                                  <Link
-                                    to={`/details/${data?.slug}`}
-                                    className="readmore-btn"
-                                  >
-                                    Read more
-                                  </Link>
-                                  {/* <div className="d-flex align-items-center">
+                          >
+                            <div className="col-sm-6">
+                              <div className="single-post-item-wrap">
+                                <div className="for-flexing-single-post">
+                                  <amp-img src={`https://softliee.com/softlee/public/storage/blogs/${data?.image}`} width="100" height="80"></amp-img>
+                                  {/* <img
+                                    className="posts-img"
+                                  
+                                    alt=""
+                                  /> */}
+                                  <div className="right-side-info">
+                                    {
+                                      mobileWidth ? <h3 className="posts-title-m">{data?.title.substring(0, 45) + "..."}</h3> :
+                                        <h3 className="posts-title-m">{data?.title}</h3>
+                                    }
+
+                                    <Link
+                                      to={`/details/${data?.slug}`}
+                                      className="readmore-btn"
+                                    >
+                                      Read more
+                                    </Link>
+                                    {/* <div className="d-flex align-items-center">
                                   <h6 className="times-ago">{item.posted}</h6>
                                   <h6 className="times-ago commentss">
                                     {item.comments}
                                   </h6>
                                 </div>{" "} */}
 
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
 
 
-                          {index == 7 || (mobileWidth && index == 3) || (mobileWidth && index == 11) ? <>
-                            <p className="ads-text">ADS</p>
-                            <Adsense
-                              client="ca-pub-2933454440337038"
-                              slot="6702463586"
-                              style={{ display: "block" }}
-                              format="auto"
-                              layout="in-article"
-                              responsive="true"
-                            />
+                            {index == 7 || (mobileWidth && index == 3) || (mobileWidth && index == 11) ? <>
+                              <p className="ads-text">ADS</p>
+                              <amp-ad
+                                client="ca-pub-2933454440337038"
+                                slot="6702463586"
+                                style={{ display: "block" }}
+                                format="auto"
+                                layout="in-article"
+                                responsive="true"
+                              ></amp-ad>
 
-                          </> : <></>}
+                            </> : <></>}
 
-                        </>)
+                          </amp-list>)
                       })}
                   </div>
                 </div>
@@ -231,6 +262,8 @@ const Ourblog = () => {
                               <div className="blog-posts-wrapp ">
                                 <div className="blog-card-design">
                                   <div className="img-side">
+
+                                    {/* //----------desktop----------- */}
                                     <img
                                       className="blog-card-img"
                                       src={`https://softliee.com/softlee/public/storage/blogs/${data?.image}`}
@@ -261,14 +294,14 @@ const Ourblog = () => {
                               </div>
                               {index == 7 || (mobileWidth && index == 3) || (mobileWidth && index == 11) ? <>
                                 <p className="ads-text">ADS</p>
-                                <Adsense
+                                <amp-ad
                                   client="ca-pub-2933454440337038"
                                   slot="6702463586"
                                   style={{ display: "block" }}
                                   format="auto"
                                   layout="in-article"
                                   responsive="true"
-                                />
+                                ></amp-ad>
 
                               </> : <></>}
 
@@ -299,14 +332,14 @@ const Ourblog = () => {
               <div className="row justify-content-center">
                 <div className="col-12">
 
-                  <Adsense
+                  <amp-ad
                     client="ca-pub-2933454440337038"
                     slot="6702463586"
                     style={{ display: "block" }}
                     format="auto"
                     layout="in-article"
                     responsive="true"
-                  />
+                  ></amp-ad>
                 </div>
 
 

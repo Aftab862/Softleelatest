@@ -50,6 +50,7 @@ const Home = () => {
   const [ram, setRam] = useState(0);
   const handleImgClick = (slug) => {
     navigate(`/${slug}`, { replace: true });
+
   };
 
   const handleTeachNews = (e) => {
@@ -62,6 +63,9 @@ const Home = () => {
       dispatch(getBrands());
     }
   }, []);
+
+
+
 
   useEffect(() => {
     if (!latestProducts?.data && !latestProducts?.loading) {
@@ -125,11 +129,33 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Mobile Phone Prices 2023 - Softliee.com</title>
+        <h1>Mobile Phone Prices 2023 - Softliee.com </h1>
         <meta
           name="description"
           content="Latest Mobile Phones & Prices in Pakistan, Compare prices and features on Android smartphones, Apple, Windows phones and Best Mobile Phone Prices 2023."
         />
+
+        <meta
+          name="keywords"
+          content={[
+            "Softliee",
+            "Smartphone",
+            "Smartphone Price in Pakistan",
+            "Mobile Prices",
+            "Mobile Price in Pakistan",
+            "Latest Mobile",
+            "Oppo Mobiles price",
+            "Realme Mobile price",
+            "Nokia Mobile Price",
+            "Samsung Mobile",
+            "iPhone Price in Pakistan",
+            "Vivo mobile price in Pakistan",
+            "infinix Mobile price"
+          ]}
+        />
+
+
+
       </Helmet>
       {isSearchBarOpen && mobileWidth ? (
         <>
@@ -163,7 +189,7 @@ const Home = () => {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6">
-                  <h2 className="main-tit">Lets Find A Mobile Phone</h2>
+                  <h1 className="main-tit">Lets Find A Mobile Phone</h1>
                   <div className="range-button">
                     <div className="range-area flex">
                       <Slider
@@ -426,7 +452,16 @@ const Home = () => {
                             )}
 
                           >
-                            <a className="single-m-link" href={item.slug}>
+                            <a
+                              className="single-m-link"
+                              href={item.slug}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.open(`/${item.slug}`, '_blank');
+                              }}
+                            >
+
+
                               <img
                                 className="single-mob-img"
                                 src={`https://softliee.com/softlee/public/storage/product/${item.image}`}
@@ -763,7 +798,8 @@ const Home = () => {
             handleClose={() => setIsTechNewsDialogOpen(false)}
           />
         </>
-      )}
+      )
+      }
     </>
   );
 };

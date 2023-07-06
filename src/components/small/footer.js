@@ -134,12 +134,12 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="col-sm-2">
+                            <div className="col-sm-2">
                                 <h3 className="footer-tit donwload-app">
                                     Download App
                                 </h3>
                                 <a href="https://play.google.com/store/apps/details?id=com.mobilestore.softliee&hl" target="_blank">  <img className='playstore-img' src="../../assets/images/icons/playstore.png" alt='logo' width="194" height="57" /></a>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,12 +275,12 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="col-sm-2">
+                            <div className="col-sm-2">
                                 <h3 className="footer-tit donwload-app">
                                     Download App
                                 </h3>
                                 <a href="https://play.google.com/store/apps/details/?id=com.mobilestore.softliee&hl" target="_blank">  <img className='playstore-img' src="../../assets/images/icons/playstore.png" alt='logo' width="15" height="50" /></a>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -315,31 +315,31 @@ const Footer = () => {
             </footer>}
 
             {
-                closead ? <></> :
-                    <div className="myanother" style={{ height: "280px !important" }}>
+                // closead ? <></> :
+                    // <div className="myanother" style={{ height: "280px !important" }}>
 
-                        <div className="myfixedad-wrap" style={{ height: "280px !important" }}>
-                            <div className={closead ? "close-wrap yes" : "close-wrap"}>
+                    //     <div className="myfixedad-wrap" style={{ height: "280px !important" }}>
+                    //         <div className={closead ? "close-wrap yes" : "close-wrap"}>
 
-                                <div className='close-btn-ads' onClick={() => {
-                                    closead ? setclosead(false) : setclosead(true)
-                                }
-                                }><span>x</span> </div>
-                            </div>
-                            {
-                                closead ? <></> : <Adsense
-                                    client="ca-pub-2933454440337038"
-                                    slot="6702463586"
-                                    style={{ display: "block" }}
-                                    format="auto"
-                                    className="myFixedAd"
+                    //             <div className='close-btn-ads' onClick={() => {
+                    //                 closead ? setclosead(false) : setclosead(true)
+                    //             }
+                    //             }><span>x</span> </div>
+                    //         </div>
+                    //         {
+                    //             closead ? <></> : <Adsense
+                    //                 client="ca-pub-2933454440337038"
+                    //                 slot="6702463586"
+                    //                 style={{ display: "block" }}
+                    //                 format="auto"
+                    //                 className="myFixedAd"
 
 
-                                />
-                            }
+                    //             />
+                    //         }
 
-                        </div>
-                    </div>
+                    //     </div>
+                    // </div>
             }
 
 

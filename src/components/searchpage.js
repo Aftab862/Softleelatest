@@ -7,6 +7,7 @@ import Header from "./small/header";
 import { IsMobileWidth, IsTabletWidth } from "./utils";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const SearchResultPage = () => {
@@ -21,6 +22,46 @@ const SearchResultPage = () => {
 
     return (
         <>
+
+
+
+            <Helmet>
+                <title>
+                    Search all Mobile brands and variants on Softliee Mobile Phone database
+                    {/* {productByBrand?.data?.brands?.meta_title
+                ? productByBrand?.data?.brands?.meta_title
+                : "Sofliee"} */}
+                </title>
+                <meta
+                    name="description"
+                    content={
+
+                        "Find mobiles at Softliee's Search result. Get a wide range of latest mobile phones, top trending mobiles,upcoming mobiles with prices in Pakistan"
+                        // productByBrand?.data?.brands?.meta_description
+
+                        //   ? productByBrand?.data?.brands?.meta_description
+                        //   : ""
+                    }
+                />
+                <meta
+                    name="keywords"
+                    content={
+                        
+                            [
+                                "Search mobile",
+                                "search upcoming mobile",
+                                "mobile phone in Pakistan"
+                              ]
+                              
+                        
+
+                        // productByBrand?.data?.brands?.meta_keywords
+                        //   ? productByBrand?.data?.brands?.meta_keywords
+                        //   : ""
+                    }
+                />
+            </Helmet>
+
             <Header />
 
             <section className="ads-section margin-top-50px margin-bottom-30px">

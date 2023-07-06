@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { Adsense } from "@ctrl/react-adsense";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import { Helmet } from "react-helmet";
 
 
 const BrowseByBudget = () => {
@@ -92,6 +93,19 @@ const BrowseByBudget = () => {
 
   }, [Users, itemOffset]);
 
+  const keywords = [
+    "Browse by budget",
+    "Mobile under 15000",
+    "Best mobile in Pakistan under 15000",
+    "Best mobile in India under 15,000",
+    "Samsung mobile under 15000",
+    "Best mobile phones under 100000, phone under 100k",
+    "best phone under 85000, phones below 80000, best phone under 80000 in Pakistan xiaomi phones under 80000, samsung phones under 80000 in pakistan",
+    "best phone under 600000 to 70000, best phone under 60000 in pakistan, best gaming phone under 65000, Best phone under 65000 in Pakistan  ",
+    "best mobile 30000 to 35000 in pakistan, phone under 30000, samsung best camera phone under 30000, best phone under 30,000 to 40000. Best phone under 35000",
+    "mobile under 20000 to 25000, best camera phone under 25000, samsung phone under 25000, iphone under 25000, Which mobile is best in 25000 range? best camera phone under 30000 ",
+
+  ];
 
 
 
@@ -100,6 +114,14 @@ const BrowseByBudget = () => {
     <div>
       <section className="ram-filter">
         <Header />
+        <Helmet>
+          <title>Browse Best Mobile Phone Under Your Budget- Softliee</title>
+          <meta
+            name="description"
+            content="Find Best Samsung, Huawei, Oppo, Vivo, OPPO, Tecno, Infinix, Apple, Xiaomi, OnePlus, Realme, Lenovo, more mobile brands from 15000, 25000.35000,45000,65000,85000, 115000 PKR at Softliee" />
+        </Helmet>
+
+
 
         <section className="ads-section margin-top-50px margin-bottom-30px" >
           <div className="container">

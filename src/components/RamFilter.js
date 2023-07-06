@@ -9,6 +9,7 @@ import { formatAmount, IsMobileWidth, IsTabletWidth } from "./utils";
 import { useSelector } from "react-redux";
 import { Adsense } from "@ctrl/react-adsense";
 import ReactPaginate from "react-paginate";
+import { Helmet } from "react-helmet";
 
 
 const RamFilter = () => {
@@ -100,13 +101,32 @@ const RamFilter = () => {
       setPageCount(pageCount1)
       console.log(currentItems, "Current ITems");
     }
-
-
   }, [Users, itemOffset]);
 
   return (
     <div>
       <section className="ram-filter">
+
+        {/* {console.log("window.location.search", window.location.pathname.slice(5,7))} */}
+        <Helmet>
+          <title>
+            List of 2GB -16GB RAM Mobile Phones- Softliee 2023
+          </title>
+          <meta
+            name="description"
+            content={
+              "Find best mobile  2GB, 3GB, 4GB, 6GB, 8Gb, 12GB, 16 GB ram mobile phone list. Get Samsung, Oneplus, Realme, Oppo, Vivo and more brands at cheap prices."
+            }
+          />
+          <meta
+            name="keywords"
+            content={
+              ["ram mobiles", "dual sim GB ram", "GB ram phone price", "GB ram phone Pakistan"]
+
+            }
+          />
+        </Helmet>
+
         <Header />
 
         <section className="ads-section margin-top-50px margin-bottom-30px" >
