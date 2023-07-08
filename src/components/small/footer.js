@@ -115,7 +115,7 @@ const Footer = () => {
 
                                     <div className="third-col-fl">
                                         <h3 className="footer-tit">
-                                            Sections
+                                            Main Menu
                                         </h3>
                                         <ul className="footer-nav">
                                             <li className="single-nav-li">
@@ -255,7 +255,7 @@ const Footer = () => {
 
                                     <div className="third-col-fl">
                                         <h3 className="footer-tit">
-                                            Sections
+                                           Main Menu
                                         </h3>
                                         <ul className="footer-nav">
                                             <li className="single-nav-li">
