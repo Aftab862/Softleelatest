@@ -129,12 +129,11 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <h1>Mobile Phone Prices 2023 - Softliee.com </h1>
+        <title>Mobile Phone Prices 2023 - Softliee.com</title>
         <meta
           name="description"
           content="Latest Mobile Phones & Prices in Pakistan, Compare prices and features on Android smartphones, Apple, Windows phones and Best Mobile Phone Prices 2023."
         />
-
         <meta
           name="keywords"
           content={[
@@ -153,10 +152,9 @@ const Home = () => {
             "infinix Mobile price"
           ]}
         />
-
-
-
+        <link rel="canonical" href={window.location.href} />
       </Helmet>
+
       {isSearchBarOpen && mobileWidth ? (
         <>
           <SearchBar onGoBack={() => setIsSearchBarOpen(false)} />
@@ -419,7 +417,7 @@ const Home = () => {
                   <div className="col-sm-6 col-5 ">
                     <div className="flex align-items-end justify-content-end">
                       {" "}
-                      <a className="seemoree" href="#">
+                      <a className="seemoree" href="#" rel="canonical">
                         See More <ChevronRightIcon className="btn-chev" />
                       </a>
                     </div>
@@ -428,7 +426,7 @@ const Home = () => {
                   <div className="col-sm-6 col-5">
                     <div className="flex align-items-end justify-content-end">
                       {" "}
-                      <a className="seemoree" href="#">
+                      <a className="seemoree" href="#" rel="canonical">
                         See More <ChevronRightIcon className="btn-chev" />
                       </a>
                     </div>
@@ -459,9 +457,8 @@ const Home = () => {
                                 e.preventDefault();
                                 window.open(`/${item.slug}`, '_blank');
                               }}
+                              rel="canonical"
                             >
-
-
                               <img
                                 className="single-mob-img"
                                 src={`https://softliee.com/softlee/public/storage/product/${item.image}`}

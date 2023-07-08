@@ -179,7 +179,7 @@ const PhoneFinder = () => {
                   "Softliee mobile finder"
                 ]} />
 
-
+            <link rel="canonical" href={window.location.href} />
           </Helmet>
           <section className="ads-section margin-top-30px">
             <div className="container">

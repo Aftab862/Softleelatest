@@ -119,6 +119,8 @@ const BrowseByBudget = () => {
           <meta
             name="description"
             content="Find Best Samsung, Huawei, Oppo, Vivo, OPPO, Tecno, Infinix, Apple, Xiaomi, OnePlus, Realme, Lenovo, more mobile brands from 15000, 25000.35000,45000,65000,85000, 115000 PKR at Softliee" />
+
+          <link rel="canonical" href={window.location.href} />
         </Helmet>
 
 

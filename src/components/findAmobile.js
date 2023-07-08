@@ -360,6 +360,8 @@ const FindAMobile = (props) => {
                 //   : ""
               }
             />
+            <link rel="canonical" href={window.location.href} />
+
           </Helmet>
           <Header
             hadleSarchBarOpen={() => setIsSearchBarOpen(true)}

@@ -76,7 +76,7 @@ const PopularMobiles = (props) => {
               "Best Android Phone"
             ]
           } />
-
+        <link rel="canonical" href={window.location.href} />
 
       </Helmet>
       {isSearchBarOpen && mobileWidth ? (

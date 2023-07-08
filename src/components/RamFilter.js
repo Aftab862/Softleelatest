@@ -125,6 +125,7 @@ const RamFilter = () => {
 
             }
           />
+          <link rel="canonical" href={window.location.href} />
         </Helmet>
 
         <Header />

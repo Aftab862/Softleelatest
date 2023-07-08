@@ -200,12 +200,12 @@ const Header = (props) => {
                       // }}
                       >Apple</h3>
                     </a>
-                    <a href="/new-mobile/samsung-mobile-phones-prices-in-pakistan" className="myLinkStyle">
+                    <a href="/new-mobile/samsung-mobile-phones-prices-in-pakistan"  rel="canonical" className="myLinkStyle">
 
                       <h3 className="topbrand-tit sub" >Samsung</h3>
                     </a>
 
-                    <a href="/new-mobile/realme-mobile-phones" className="myLinkStyle">
+                    <a href="/new-mobile/realme-mobile-phones"  rel="canonical" className="myLinkStyle">
 
                       <h3 className="topbrand-tit sub"
 
@@ -219,7 +219,7 @@ const Header = (props) => {
                       Brand[0] && Brand[0].map((item, index) => {
                         return (
                           <>
-                            <a href={"/new-mobile/" + item.slug} className="myLinkStyle">
+                            <a href={"/new-mobile/" + item.slug} className="myLinkStyle" >
                               <h3 className="topbrand-tit sub" >{item.brand_name}                        </h3>
                             </a>
                           </>
@@ -788,6 +788,7 @@ const Header = (props) => {
                     <a
                       href="https://www.facebook.com/softliee/"
                       target="_blank"
+                      rel="canonical"
                     >
                       <img
                         className="social-icon-single"
@@ -800,6 +801,7 @@ const Header = (props) => {
                     <a
                       href="https://www.youtube.com/channel/UCui5-jNud8arKsWsbt3WqeQ"
                       target="_blank"
+                      rel="canonical"
                     >
                       <img
                         className="social-icon-single"
@@ -812,6 +814,7 @@ const Header = (props) => {
                     <a
                       href="https://pk.linkedin.com/showcase/softliee"
                       target="_blank"
+
                     >
                       <img
                         className="social-icon-single"

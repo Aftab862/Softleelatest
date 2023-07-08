@@ -427,7 +427,7 @@ const PageCompare = () => {
 
 
 
-
+        <link rel="canonical" href={window.location.href} />
 
       </Helmet>
       {compareTwoProducts?.loading ? (

@@ -1,0 +1,34 @@
+User-agent: *
+Disallow:
+
+User-agent: Mediapartners-Google 
+Disallow:
+
+User-agent: AppEngine-Google
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 4
+
+User-agent: Bingbot
+Crawl-delay: 3
+
+User-agent: slurp
+Crawl-delay: 5
+
+User-agent: Seznambot
+Crawl-delay: 4
+
+User-agent: DataForSeoBot
+Crawl-delay: 10
+
+User-agent: Dotbot
+Crawl-delay: 5
+
+User-agent: grapeshot
+Disallow:
+
+Sitemap:https://softliee.com/sitemap.xml

@@ -46,20 +46,21 @@ const SearchResultPage = () => {
                 <meta
                     name="keywords"
                     content={
-                        
-                            [
-                                "Search mobile",
-                                "search upcoming mobile",
-                                "mobile phone in Pakistan"
-                              ]
-                              
-                        
+
+                        [
+                            "Search mobile",
+                            "search upcoming mobile",
+                            "mobile phone in Pakistan"
+                        ]
+
+
 
                         // productByBrand?.data?.brands?.meta_keywords
                         //   ? productByBrand?.data?.brands?.meta_keywords
                         //   : ""
                     }
                 />
+                <link rel="canonical" href={window.location.href} />
             </Helmet>
 
             <Header />

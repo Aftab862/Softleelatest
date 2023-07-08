@@ -80,7 +80,7 @@ const ProductPages = () => {
   );
   const handleImgClick = (slug) => {
     navigate(`/${slug}`, { replace: true });
- 
+
   };
 
   useEffect(() => {
@@ -331,10 +331,10 @@ const ProductPages = () => {
     <>
       <Helmet>
         <title>
-            {singleProducts?.data?.single_product?.meta_title
-              ? singleProducts?.data?.single_product?.meta_title
-              : "Sofliee"}
-       
+          {singleProducts?.data?.single_product?.meta_title
+            ? singleProducts?.data?.single_product?.meta_title
+            : "Sofliee"}
+
         </title>
         <meta
           name="description"
@@ -352,7 +352,12 @@ const ProductPages = () => {
               : ""
           }
         />
+
+        <link rel="canonical" href={window.location.href} />
+
       </Helmet>
+
+
       {isSearchBarOpen && mobileWidth ? (
         <>
           <SearchBar onGoBack={() => setIsSearchBarOpen(false)} />
@@ -547,6 +552,7 @@ const ProductPages = () => {
                                 className="nav-link rounded-0 more_vision_details"
                                 aria-current="page"
                                 href="#"
+                               
                               >
                                 Pictures <ChevronRightIcon />
                               </a>
@@ -555,6 +561,7 @@ const ProductPages = () => {
                                 className="nav-link rounded-0 more_vision_details"
                                 aria-current="page"
                                 href="#"
+                             
                               >
                                 Compare <ChevronRightIcon />
                               </Link>
@@ -579,6 +586,7 @@ const ProductPages = () => {
                           <a
                             href="https://play.google.com/store/apps/details?id=com.mobilestore.softliee&hl"
                             target="_blank"
+                         
                           >
 
                             <img
@@ -751,6 +759,7 @@ const ProductPages = () => {
                               className="nav-link rounded-0 more_vision_details"
                               aria-current="page"
                               href="#"
+                          
                             >
                               Pictures <ChevronRightIcon />
                             </a>
@@ -759,6 +768,7 @@ const ProductPages = () => {
                               className="nav-link rounded-0 more_vision_details"
                               aria-current="page"
                               href="#"
+                           
                             >
                               Compare <ChevronRightIcon />
                             </Link>
