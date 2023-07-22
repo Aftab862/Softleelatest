@@ -453,10 +453,6 @@ const Home = () => {
                             <a
                               className="single-m-link"
                               href={item.slug}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                window.open(`/${item.slug}`, '_blank');
-                              }}
                               rel="canonical"
                             >
                               <img

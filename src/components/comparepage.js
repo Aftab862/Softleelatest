@@ -476,9 +476,9 @@ const PageCompare = () => {
               <div className="container">
                 <div className="row">
                   <div className=" col-sm-12">
-                    <h3 className="compare-tit">
+                    <h2 className="compare-tit main-tit">
                       {compareTwoProducts?.data?.first_product?.name} Comparison Mobile
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -782,7 +782,7 @@ const PageCompare = () => {
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12 spec-col-for-p spec-sec-compare">
-                      <div className="main-tit">Specifications</div>
+                      <h1 className="main-tit">Specifications</h1>
 
                       {state.group1.length > 0 && (
                         <>

@@ -114,15 +114,15 @@ const UpcomingPage = (props) => {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6 col-7">
-                  <h2 className="main-tit">Upcoming Mobiles</h2>
+                  <h1 className="main-tit">Upcoming Mobiles</h1>
                 </div>
                 <div className="col-sm-6 col-5">
-                  <div className="flex align-items-end justify-content-end">
+                  <h2 className="flex align-items-end justify-content-end">
                     {" "}
                     <a className="seemoree" href="#">
                       See More <ChevronRightIcon className="btn-chev" />
                     </a>
-                  </div>
+                  </h2>
                 </div>
               </div>
             </div>

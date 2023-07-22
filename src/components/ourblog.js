@@ -164,16 +164,11 @@ const Ourblog = () => {
                     {myCurrentItems &&
                       myCurrentItems.map((data, index) => {
                         return (
-                          <amp-list
-                          // key={data.id}
-                          // layout="responsive"
-                          // src={`https://softliee.com/amp-api/${data.id}`}
-
-                          >
+                          <>
                             <div className="col-sm-6">
                               <div className="single-post-item-wrap">
                                 <div className="for-flexing-single-post">
-                                  <amp-img src={`https://softliee.com/softlee/public/storage/blogs/${data?.image}`} width="100" height="80"></amp-img>
+                                  <img src={`https://softliee.com/softlee/public/storage/blogs/${data?.image}`} width="100" height="80"></img>
                                   {/* <img
                                     className="posts-img"
                                   
@@ -206,18 +201,18 @@ const Ourblog = () => {
 
                             {index == 7 || (mobileWidth && index == 3) || (mobileWidth && index == 11) ? <>
                               <p className="ads-text">ADS</p>
-                              <amp-ad
+                              <Adsense
                                 client="ca-pub-2933454440337038"
                                 slot="6702463586"
                                 style={{ display: "block" }}
                                 format="auto"
                                 layout="in-article"
                                 responsive="true"
-                              ></amp-ad>
+                              ></Adsense>
 
                             </> : <></>}
 
-                          </amp-list>)
+                          </>)
                       })}
                   </div>
                 </div>
@@ -294,14 +289,14 @@ const Ourblog = () => {
                               </div>
                               {index == 7 || (mobileWidth && index == 3) || (mobileWidth && index == 11) ? <>
                                 <p className="ads-text">ADS</p>
-                                <amp-ad
+                                <Adsense
                                   client="ca-pub-2933454440337038"
                                   slot="6702463586"
                                   style={{ display: "block" }}
                                   format="auto"
                                   layout="in-article"
                                   responsive="true"
-                                ></amp-ad>
+                                ></Adsense>
 
                               </> : <></>}
 
@@ -332,14 +327,14 @@ const Ourblog = () => {
               <div className="row justify-content-center">
                 <div className="col-12">
 
-                  <amp-ad
+                  <Adsense
                     client="ca-pub-2933454440337038"
                     slot="6702463586"
                     style={{ display: "block" }}
                     format="auto"
                     layout="in-article"
                     responsive="true"
-                  ></amp-ad>
+                  ></Adsense>
                 </div>
 
 

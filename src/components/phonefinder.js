@@ -206,9 +206,9 @@ const PhoneFinder = () => {
             <div className="container">
               <div className="row">
                 <div className="col-sm-12">
-                  <h3 className="main-tit phone-finder">
+                  <h1 className="main-tit phone-finder">
                     Softliee Phone Finder
-                  </h3>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -219,9 +219,9 @@ const PhoneFinder = () => {
               <div className="row">
                 <div className="col-sm-12">
                   <div className="all-range-wtap">
-                    <h3 className="withoudborder-tit text-center">
+                    <h2 className="main-tit withoudborder-tit text-center">
                       Choose a Price Range to Search In
-                    </h3>
+                    </h2>
 
                     <div className="range-button range-area-wrapper">
                       <div className="range-values-wrap">
@@ -284,7 +284,7 @@ const PhoneFinder = () => {
               <div className="row">
                 <div className="col-sm-6">
                   <div className="for-light-bg">
-                    <h4 className="phone-finder-tit">Select Brand</h4>
+                    <h4 className="phone-finder-tit ">Select Brand</h4>
                     <Select
                       theme={selectThemeColors}
                       value={state.brand}

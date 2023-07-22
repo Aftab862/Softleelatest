@@ -324,6 +324,8 @@ const Filterbrand = (props) => {
                                     : ""
                             }
                         />
+                             <link rel="canonical" href={window.location.href} />
+
                     </Helmet>
                     <Header
                         hadleSarchBarOpen={() => setIsSearchBarOpen(true)}
@@ -565,13 +567,15 @@ const Filterbrand = (props) => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-sm-12">
-                                    <h3 className="main-tit text-capialize">
+                                    <h1 className="main-tit text-capialize">
+                                    <h2>
                                         {searchParams.get("under")
                                             ? "Browse By Budget Mobiles"
                                             : searchParams.get("from")
                                                 ? "Filtered Mobiles"
                                                 : slug?.replaceAll("-", " ")}
-                                    </h3>
+                                   </h2>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
